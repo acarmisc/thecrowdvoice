@@ -68,17 +68,22 @@ FACEBOOK_APP_SECRET=your_app_secret
 
 ### 3. Avvia l'applicazione
 
-**Opzione A: Con Makefile (consigliato)**
+**Opzione A: Con script bash (consigliato se hai problemi con docker-compose)** ⭐
+```bash
+./start.sh
+```
+
+**Opzione B: Con Makefile**
 ```bash
 make up
 ```
 
-**Opzione B: Con Docker Compose**
+**Opzione C: Con Docker Compose**
 ```bash
 docker compose up --build
 ```
 
-**Opzione C: Con docker-compose legacy**
+**Opzione D: Con docker-compose legacy**
 ```bash
 docker-compose up --build
 ```

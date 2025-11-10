@@ -18,20 +18,17 @@ cp .env.example .env
 
 ### 2. Avvia i container
 
+**Metodo consigliato (usa script bash):**
 ```bash
-# Build e start
+./start.sh
+```
+
+**Metodo alternativo (con docker-compose):**
+```bash
 docker-compose up --build
-
-# Oppure in background
-docker-compose up -d --build
 ```
 
-Attendi che i servizi siano pronti. Vedrai:
-```
-backend_1   | Django version 4.2.7, using settings 'social_analytics.settings'
-backend_1   | Starting development server at http://0.0.0.0:8000/
-frontend_1  | webpack compiled successfully
-```
+Attendi che i servizi siano pronti (~30-60 secondi per il primo avvio).
 
 ### 3. Crea il primo utente
 
@@ -72,7 +69,7 @@ Poi vai su http://localhost:8000/admin
    ```
 4. Riavvia i container:
    ```bash
-   docker-compose restart
+   ./stop.sh && ./start.sh
    ```
 5. Vai su "Canali" e clicca "Facebook"
 6. Autorizza l'app
@@ -82,28 +79,37 @@ Poi vai su http://localhost:8000/admin
 
 ## Comandi Utili
 
+**Con gli script (più semplice):**
 ```bash
-# Fermare i container
-docker-compose down
+./start.sh                  # Avvia tutto
+./stop.sh                   # Ferma tutto
+./clean.sh                  # Pulisce tutto (attenzione: cancella DB!)
+./logs.sh                   # Mostra tutti i log
+./logs.sh backend           # Solo log backend
+./logs.sh frontend          # Solo log frontend
+```
 
-# Riavviare dopo modifiche
-docker-compose restart
-
+**Con Docker diretto:**
+```bash
 # Vedere i log
-docker-compose logs -f
+docker logs -f social-analytics-backend
+docker logs -f social-analytics-frontend
 
 # Accedere al container backend
-docker-compose exec backend bash
+docker exec -it social-analytics-backend bash
 
 # Eseguire migrazioni
-docker-compose exec backend python manage.py migrate
+docker exec -it social-analytics-backend python manage.py migrate
 
 # Creare superuser
-docker-compose exec backend python manage.py createsuperuser
+docker exec -it social-analytics-backend python manage.py createsuperuser
+```
 
-# Pulire tutto e ricominciare
-docker-compose down -v
-docker-compose up --build
+**Con docker-compose:**
+```bash
+docker-compose down         # Ferma
+docker-compose up           # Avvia
+docker-compose logs -f      # Log
 ```
 
 ## Problemi Comuni

@@ -4,12 +4,27 @@
 
 Questo errore può verificarsi con versioni non aggiornate di Docker. Ecco le soluzioni:
 
-### Soluzione 1: Aggiorna Docker Desktop (Consigliato)
+### Soluzione 1: Usa gli script bash (PIÙ SEMPLICE) ⭐
+
+```bash
+./start.sh
+```
+
+Questo script bypassa completamente docker-compose e usa comandi Docker standard.
+
+Altri script disponibili:
+```bash
+./stop.sh   # Ferma i servizi
+./clean.sh  # Pulisce tutto
+./logs.sh   # Mostra i log
+```
+
+### Soluzione 2: Aggiorna Docker Desktop
 
 Scarica e installa l'ultima versione di Docker Desktop da:
 https://www.docker.com/products/docker-desktop
 
-### Soluzione 2: Usa docker-compose (versione legacy)
+### Soluzione 3: Usa docker-compose (versione legacy)
 
 Se hai docker-compose installato separatamente:
 
@@ -17,7 +32,7 @@ Se hai docker-compose installato separatamente:
 docker-compose up --build
 ```
 
-### Soluzione 3: Usa il Makefile
+### Soluzione 4: Usa il Makefile
 
 ```bash
 make up
