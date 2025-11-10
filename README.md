@@ -68,6 +68,17 @@ FACEBOOK_APP_SECRET=your_app_secret
 
 ### 3. Avvia l'applicazione
 
+**Opzione A: Con Makefile (consigliato)**
+```bash
+make up
+```
+
+**Opzione B: Con Docker Compose**
+```bash
+docker compose up --build
+```
+
+**Opzione C: Con docker-compose legacy**
 ```bash
 docker-compose up --build
 ```
@@ -77,12 +88,16 @@ L'applicazione sarà disponibile su:
 - **Backend API**: http://localhost:8000
 - **Django Admin**: http://localhost:8000/admin
 
+**Problemi con Docker?** Consulta [TROUBLESHOOTING.md](TROUBLESHOOTING.md) per soluzioni alternative.
+
 ### 4. Crea un superuser (opzionale)
 
 Per accedere al Django Admin:
 
 ```bash
-docker-compose exec backend python manage.py createsuperuser
+make superuser
+# oppure
+docker compose exec backend python manage.py createsuperuser
 ```
 
 ## Configurazione Piattaforme Social
