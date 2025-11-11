@@ -93,6 +93,11 @@ L'applicazione sarà disponibile su:
 - **Backend API**: http://localhost:8000
 - **Django Admin**: http://localhost:8000/admin
 
+**Utente demo creato automaticamente:** 🎉
+- Username: `demo` / Password: `demo1234`
+- Include 2 canali social, messaggi e sentiment già analizzato
+- Pronto per essere testato senza configurazione!
+
 **Problemi con Docker?** Consulta [TROUBLESHOOTING.md](TROUBLESHOOTING.md) per soluzioni alternative.
 
 ### 4. Crea un superuser (opzionale)

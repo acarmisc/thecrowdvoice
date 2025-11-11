@@ -30,33 +30,41 @@ docker-compose up --build
 
 Attendi che i servizi siano pronti (~30-60 secondi per il primo avvio).
 
-### 3. Crea il primo utente
+### 3. Accedi all'applicazione
 
-Apri http://localhost:3000 nel browser:
+Apri http://localhost:3000 nel browser.
 
-1. Clicca su "Registrati"
-2. Compila il form:
-   - Username: `demo`
-   - Email: `demo@example.com`
-   - Password: `demo1234`
-3. Clicca "Registrati"
+**Un utente demo viene creato automaticamente all'avvio!** 🎉
 
-Verrai reindirizzato automaticamente alla Dashboard!
+**Credenziali di accesso:**
+- **Username:** `demo`
+- **Password:** `demo1234`
 
-### 4. Test senza connessioni social
+**L'utente demo include già:**
+- ✅ 2 canali social connessi (Facebook, Instagram)
+- ✅ 8 messaggi di esempio
+- ✅ Analisi sentiment già eseguita
+- ✅ Statistiche nella dashboard
 
-Anche senza connettere canali social, puoi esplorare:
-- Dashboard con statistiche (vuote inizialmente)
-- Pagina Canali
-- Pagina Messaggi
+Puoi iniziare subito a esplorare l'app con dati realistici!
 
-### 5. (Opzionale) Crea superuser per Django Admin
+**Oppure** puoi registrare un nuovo account cliccando su "Registrati".
+
+### 4. (Opzionale) Crea superuser per Django Admin
 
 ```bash
-docker-compose exec backend python manage.py createsuperuser
+docker exec -it social-analytics-backend python manage.py createsuperuser
 ```
 
 Poi vai su http://localhost:8000/admin
+
+### 5. (Opzionale) Gestisci dati demo
+
+Se vuoi ricreare i dati demo o vedere le credenziali:
+
+```bash
+./demo.sh
+```
 
 ### 6. (Opzionale) Connetti Facebook
 
@@ -87,6 +95,7 @@ Poi vai su http://localhost:8000/admin
 ./logs.sh                   # Mostra tutti i log
 ./logs.sh backend           # Solo log backend
 ./logs.sh frontend          # Solo log frontend
+./demo.sh                   # Gestisci utente/dati demo
 ```
 
 **Con Docker diretto:**
