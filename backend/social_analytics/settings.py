@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'social_analytics.core',
     'social_analytics.accounts',
     'social_analytics.channels',
-    'social_analytics.messages',
+    'social_analytics.interactions',
     'social_analytics.sentiment',
 ]
 

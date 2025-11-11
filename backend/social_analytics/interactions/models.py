@@ -1,5 +1,5 @@
 from django.db import models
-from channels.models import SocialAccount
+from social_analytics.channels.models import SocialAccount
 
 
 class Message(models.Model):

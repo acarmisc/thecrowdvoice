@@ -1,5 +1,5 @@
 from django.db import models
-from messages.models import Message
+from social_analytics.interactions.models import Message
 
 
 class SentimentAnalysis(models.Model):

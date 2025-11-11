@@ -2,8 +2,8 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from channels.models import SocialAccount
-from messages.models import Message
+from social_analytics.channels.models import SocialAccount
+from social_analytics.interactions.models import Message
 from .models import SentimentAnalysis
 from .serializers import SentimentAnalysisSerializer
 from .analyzer import analyze_sentiment, batch_analyze_messages

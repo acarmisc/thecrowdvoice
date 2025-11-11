@@ -13,7 +13,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # Import models here to avoid circular import issues
         from social_analytics.channels.models import SocialAccount
-        from social_analytics.messages.models import Message
+        from social_analytics.interactions.models import Message
         from social_analytics.sentiment.models import SentimentAnalysis
 
         # Crea utente demo

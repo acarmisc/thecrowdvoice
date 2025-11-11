@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.utils import timezone
-from channels.models import SocialAccount
+from social_analytics.channels.models import SocialAccount
 from .models import Message
 from .serializers import MessageSerializer
 import requests
