@@ -20,13 +20,13 @@ docker network create social-analytics-network 2>/dev/null || echo "Network già
 # Build backend con docker standard
 echo -e "${YELLOW}Build backend...${NC}"
 cd backend
-docker build --platform linux/amd64 -t social-analytics-backend:latest .
+docker build -t social-analytics-backend:latest .
 cd ..
 
 # Build frontend
 echo -e "${YELLOW}Build frontend...${NC}"
 cd frontend
-docker build --platform linux/amd64 -t social-analytics-frontend:latest .
+docker build -t social-analytics-frontend:latest .
 cd ..
 
 # Crea volume per il database se non esiste

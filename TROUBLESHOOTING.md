@@ -1,5 +1,23 @@
 # Risoluzione Problemi Docker
 
+## Errore: "no match for platform in manifest" o "not found"
+
+Questo errore si verifica quando Docker cerca di usare un'architettura specifica non disponibile.
+
+**Soluzione:** Lo script `start.sh` è stato aggiornato per usare automaticamente la piattaforma nativa del tuo sistema. Assicurati di avere l'ultima versione:
+
+```bash
+git pull
+./start.sh
+```
+
+Se il problema persiste, prova a rimuovere le immagini esistenti:
+
+```bash
+docker rmi social-analytics-backend:latest social-analytics-frontend:latest 2>/dev/null || true
+./start.sh
+```
+
 ## Errore: "compose build requires buildx 0.17 or later"
 
 Questo errore può verificarsi con versioni non aggiornate di Docker. Ecco le soluzioni:
