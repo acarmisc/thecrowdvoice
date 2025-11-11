@@ -31,11 +31,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'core',
-    'accounts',
-    'channels',
-    'messages',
-    'sentiment',
+    'social_analytics.core',
+    'social_analytics.accounts',
+    'social_analytics.channels',
+    'social_analytics.messages',
+    'social_analytics.sentiment',
 ]
 
 MIDDLEWARE = [

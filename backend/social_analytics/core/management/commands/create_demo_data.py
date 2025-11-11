@@ -1,8 +1,5 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-from channels.models import SocialAccount
-from messages.models import Message
-from sentiment.models import SentimentAnalysis
 from django.utils import timezone
 from datetime import timedelta
 import random
@@ -14,6 +11,11 @@ class Command(BaseCommand):
     help = 'Crea dati demo per testing (utente + messaggi + sentiment)'
 
     def handle(self, *args, **options):
+        # Import models here to avoid circular import issues
+        from social_analytics.channels.models import SocialAccount
+        from social_analytics.messages.models import Message
+        from social_analytics.sentiment.models import SentimentAnalysis
+
         # Crea utente demo
         username = 'demo'
         email = 'demo@example.com'
